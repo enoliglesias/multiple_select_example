@@ -69,7 +69,6 @@ defmodule MultipleSelectExample.Company do
   """
   def update_job(%Job{} = job, attrs) do
     job
-    |> Repo.preload( [:job_competencies])
     |> Job.changeset(attrs)
     |> Repo.update()
   end
